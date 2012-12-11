@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  contact: MyString
+  arrive: 2012-12-11 14:20:00
+  leave: 2012-12-11 14:20:00
+  comment: MyText
+
+two:
+  name: MyString
+  contact: MyString
+  arrive: 2012-12-11 14:20:00
+  leave: 2012-12-11 14:20:00
+  comment: MyText
