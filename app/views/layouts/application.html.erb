@@ -7,12 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="open">
+    <% if @isopen %>
+      <div>O Matehackers esta <em>aberto</em>. Seja bem vindo.</div>
+      <ul>
+      <% @checkins.each do |checkin| %>
+        <li>
+        O Hacker <%= checkin.name %> se programou para ficar até <%= checkin.leave %>
+        <% if !checkin.contact.empty? %> e forneceu o seguinte contato: <%= checkin.contact %><% end %>.
+        </li>
+      <% end %>
+      </ul>
+    <% else %>
+      <div>Parece que o Matehackers esta <em>fechado</em>, pois nenhum hacker fez checkin para o horario atual.</div>
+      <div><%= link_to "Consulte a lista de checkins programados." , checkins_path %></div>
+    <% end %>
+  </div>
 
-<%= yield %>
+  <%= yield %>
 
-<div id="calendar">
-  <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;hl=pt_BR&amp;bgcolor=%23ffffff&amp;src=8r0n9mjiil65974vqg404pu8fk%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FSao_Paulo" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no">
-  </iframe>
-</div>
+  <div id="calendar">
+    <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;hl=pt_BR&amp;bgcolor=%23ffffff&amp;src=8r0n9mjiil65974vqg404pu8fk%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FSao_Paulo" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no">
+    </iframe>
+  </div>
 </body>
 </html>

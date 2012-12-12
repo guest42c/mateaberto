@@ -41,7 +41,9 @@ class CheckinsController < ApplicationController
   # POST /checkins.json
   def create
     @checkin = Checkin.new(params[:checkin])
-
+    if @checkin.name.empty?
+      @checkin.name = "sem nome"
+    end
     respond_to do |format|
       if @checkin.save
         format.html { redirect_to @checkin, notice: 'Checkin was successfully created.' }
