@@ -2,7 +2,7 @@ class CheckinsController < ApplicationController
   # GET /checkins
   # GET /checkins.json
   def index
-    @checkins = Checkin.where("leave > ?", Time.now.to_datetime)
+    @checkins = Checkin.where("leave > ?", Time.now.to_datetime).order("leave")
 
     respond_to do |format|
       format.html # index.html.erb
