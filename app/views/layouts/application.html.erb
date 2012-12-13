@@ -18,7 +18,7 @@
     <% if @isopen %>
       <div class="alert alert-success">O Matehackers esta <span class="label label-success">aberto</span>. Seja bem vindo.</div>
       <ul>
-      <% @checkins.each do |checkin| %>
+      <% @current_checkins.each do |checkin| %>
         <li>
         O Hacker <%= checkin.name %> se programou para ficar até <%= checkin.leave %>
         <% if !checkin.contact.empty? %> e forneceu o seguinte contato: <%= checkin.contact %><% end %>.
