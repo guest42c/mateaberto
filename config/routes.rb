@@ -1,7 +1,9 @@
 Mateaberto::Application.routes.draw do
 
   root :to => 'checkins#index'
- 
+  
+  match '/status' => 'status#show'
+
   resources :checkins
   
   # The priority is based upon order of creation:
