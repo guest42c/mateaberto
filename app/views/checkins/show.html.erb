@@ -1,30 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Checkin -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @checkin.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @checkin.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contact) %>:</strong></dt>
+  <dd><%= @checkin.contact %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:arrive) %>:</strong></dt>
+  <dd><%= @checkin.arrive %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:leave) %>:</strong></dt>
+  <dd><%= @checkin.leave %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
+  <dd><%= @checkin.comment %></dd>
+</dl>
 
-<p>
-  <b>Contact:</b>
-  <%= @checkin.contact %>
-</p>
-
-<p>
-  <b>Arrive:</b>
-  <%= @checkin.arrive %>
-</p>
-
-<p>
-  <b>Leave:</b>
-  <%= @checkin.leave %>
-</p>
-
-<p>
-  <b>Comment:</b>
-  <%= @checkin.comment %>
-</p>
-
-
-<%= link_to 'Edit', edit_checkin_path(@checkin) %> |
-<%= link_to 'Back', checkins_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              checkins_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_checkin_path(@checkin), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              checkin_path(@checkin),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

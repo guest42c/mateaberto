@@ -7,9 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/">Matehackers checkins</a>
+      </div>
+    </div>
+  </div>
   <div id="open">
     <% if @isopen %>
-      <div>O Matehackers esta <em>aberto</em>. Seja bem vindo.</div>
+      <div class="alert alert-success">O Matehackers esta <span class="label label-success">aberto</span>. Seja bem vindo.</div>
       <ul>
       <% @checkins.each do |checkin| %>
         <li>
@@ -19,14 +26,13 @@
       <% end %>
       </ul>
     <% else %>
-      <div>Parece que o Matehackers esta <em>fechado</em>, pois nenhum hacker fez checkin para o horario atual.</div>
-      <div><%= link_to "Consulte a lista de checkins programados." , checkins_path %></div>
+      <div class="alert">Parece que o Matehackers esta <span class="label">fechado</span>, pois nenhum hacker fez checkin para o horario atual.</div>
     <% end %>
   </div>
 
   <%= yield %>
 
-  <div id="calendar">
+  <div id="calendar" class="well well-large" style="margin-top: 30px; text-align: center;">
     <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;hl=pt_BR&amp;bgcolor=%23ffffff&amp;src=8r0n9mjiil65974vqg404pu8fk%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FSao_Paulo" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no">
     </iframe>
   </div>
