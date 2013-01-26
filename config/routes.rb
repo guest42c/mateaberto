@@ -5,6 +5,8 @@ Mateaberto::Application.routes.draw do
   match '/status' => 'status#show'
 
   resources :checkins
+
+  resources :installfos
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
