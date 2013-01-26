@@ -7,14 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <script>
+    var manifest_url = "http://mateaberto.herokuapp.com/manifest.webapp";
+  </script>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
         <a class="brand" href="/">Matehackers checkins</a>
-
       </div>
     </div>
   </div>
+  
+  <button class="installfos" click="navigator.mozApps.install(manifest_url); return false;">
+    Install this awesome app on your homescreen!
+  </button>
+  
   <div id="open">
     <% if @isopen %>
       <div class="alert alert-success">O Matehackers esta <span class="label label-success">aberto</span>. Seja bem vindo.</div>
@@ -30,13 +37,6 @@
       <div class="alert">Parece que o Matehackers esta <span class="label">fechado</span>, pois nenhum hacker fez checkin para o horario atual.</div>
     <% end %>
   </div>
-  <script>
-    var manifest_url = "http://mateaberto.herokuapp.com/manifest.webapp";
-  </script>
-
-  <button class="installfos" click="navigator.mozApps.install(manifest_url); return false;">
-    Install this awesome app on your homescreen!
-  </button>
 
   <%= yield %>
 
