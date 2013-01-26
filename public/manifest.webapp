@@ -1,0 +1,13 @@
+{
+    "name": "Mateaberto",
+      "description": "Check out when Hackerspace Matehackers is open or Checkin to others know that you're there.",
+        "launch_path": "/",
+          "icons": {
+                "128": "/img/icon-128.png"
+                    },
+            "developer": {
+                  "name": "Matehackers",
+                      "url": "http://matehackers.org"
+                          },
+              "default_locale": "pt_BR"
+}
