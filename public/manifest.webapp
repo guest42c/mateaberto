@@ -3,7 +3,7 @@
       "description": "Check out when Hackerspace Matehackers is open or Checkin to others know that you're there.",
         "launch_path": "/",
           "icons": {
-                "128": "/img/icon-128.png"
+                "128": "/image/matehackers-logo.png"
                     },
             "developer": {
                   "name": "Matehackers",
