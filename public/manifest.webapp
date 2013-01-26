@@ -1,13 +1,14 @@
 {
     "name": "Mateaberto",
-      "description": "Veja quem esta no Hackerspace Matehackers ou faça checkin para que os outros saibam quando voce estara presente.",
-        "launch_path": "/",
-          "icons": {
-                "128": "/image/matehackers-logo.png"
-                    },
-            "developer": {
-                  "name": "Matehackers",
-                      "url": "http://matehackers.org"
-                          },
-              "default_locale": "pt_BR"
+    "description": "Veja quem esta no Hackerspace Matehackers ou faça checkin para que os outros saibam quando voce estara presente.",
+    "icons": {
+      "128": "/image/matehackers-logo.png"
+    },
+    "developer": {
+      "name": "Matehackers",
+      "url": "http://matehackers.org"
+    },
+    "default_locale": "en",
+    "orientation": ["landscape-primary", "portrait-secondary"],
+    "type": "web"
 }
