@@ -2,7 +2,7 @@
     "name": "Mateaberto",
     "description": "Veja quem esta no Hackerspace Matehackers ou faça checkin para que os outros saibam quando voce estara presente.",
     "icons": {
-      "128": "app/assets/images/matehackers-logo.png"
+      "128": "/matehackers-logo.png"
     },
     "developer": {
       "name": "Matehackers",
