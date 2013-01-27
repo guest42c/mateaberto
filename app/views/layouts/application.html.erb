@@ -9,7 +9,7 @@
     var request = navigator.mozApps.getSelf();
     request.onsuccess = function() {
       if (request.result) {
-        $(".installfos").show();
+        $(".installfos").hide();
       } else {
         $(".installfos").show();
       }
@@ -20,7 +20,7 @@
 <body>
   <script>
     function installapp() {
-      var request = window.navigator.mozApps.install("http://mateaberto.herokuapp.com/manifest.webapp")
+      var request = window.navigator.mozApps.install("manifest.webapp")
       request.onsuccess = function () {
         // Save the App object that is returned
         var appRecord = this.result;
@@ -40,10 +40,6 @@
     </div>
   </div>
   
-  <button class="installfos" onclick="installapp()">
-    Install this app on your homescreen!
-  </button>
-  
   <div id="open">
     <% if @isopen %>
       <div class="alert alert-success">O Matehackers esta <span class="label label-success">aberto</span>. Seja bem vindo.</div>
@@ -60,6 +56,10 @@
     <% end %>
   </div>
 
+  <button class="installfos" onclick="installapp()">
+    Install this app on your homescreen!
+  </button>
+  
   <%= yield %>
 
   <div id="calendar" class="well well-large" style="margin-top: 30px; text-align: center;">
