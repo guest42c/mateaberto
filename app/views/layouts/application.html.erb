@@ -9,6 +9,20 @@
 <body>
   <script>
     var manifest_url = "http://mateaberto.herokuapp.com/manifest";
+    var install = function() {
+      alert('chamou');
+      var request = window.navigator.mozApps.install(manifest_url);
+      request.onsuccess = function () {
+        // Save the App object that is returned
+        var appRecord = this.result;
+        alert('Installation successful!');
+      };
+
+      request.onerror = function () {
+        // Display the error information from the DOMError object
+        alert('Install failed, error: ' + this.error.name);
+      };
+    };
   </script>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -18,7 +32,7 @@
     </div>
   </div>
   
-  <button class="installfos" click="navigator.mozApps.install(manifest_url); return false;">
+  <button class="installfos" click="install">
     Install this awesome app on your homescreen!
   </button>
   
