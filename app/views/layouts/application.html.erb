@@ -5,10 +5,32 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script>
+    var request = navigator.mozApps.getSelf();
+    request.onsuccess = function() {
+      if (request.result) {
+        $(".installfos").show();
+      } else {
+        $(".installfos").hide();
+      }
+    };
+
+  </script>
 </head>
 <body>
   <script>
-    var manifest_url = "http://mateaberto.herokuapp.com/manifest";
+    function installapp() {
+      var request = window.navigator.mozApps.install("http://mateaberto.herokuapp.com/manifest.webapp")
+      request.onsuccess = function () {
+        // Save the App object that is returned
+        var appRecord = this.result;
+        alert('Installation successful!');
+      };  
+      request.onerror = function () {
+        // Display the error information from the DOMError object
+        alert('Install failed, error: ' + this.error.name);
+      };  
+    };
   </script>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -18,8 +40,8 @@
     </div>
   </div>
   
-  <button class="installfos" click="navigator.mozApps.install(manifest_url); return false;">
-    Install this awesome app on your homescreen!
+  <button class="installfos" onclick="installapp()">
+    Install this app on your homescreen!
   </button>
   
   <div id="open">

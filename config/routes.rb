@@ -6,7 +6,7 @@ Mateaberto::Application.routes.draw do
 
   resources :checkins
 
-  match '/manifest' => 'installfos#get' 
+  match '/manifest.webapp' => 'installfos#get' 
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
