@@ -9,7 +9,7 @@
     var request = navigator.mozApps.getSelf();
     request.onsuccess = function() {
       if (request.result) {
-        $(".installfos").show();
+        $(".installfos").hide();
       } else {
         $(".installfos").show();
       }
